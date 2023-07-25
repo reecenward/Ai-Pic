@@ -6,7 +6,7 @@ from google.cloud.vision_v1 import types
 import openai
 
 # Set up OpenAI API credentials
-openai.api_key = "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"
+openai.api_key = ""
 
 # Define prompts to send to GPT-3
 prompts = {
@@ -38,7 +38,7 @@ def handle_photo():
     prompt = prompts.get(prompt_type, prompts['summarize'])
 
     # Initialize the Google Cloud Vision API client
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'/Users/reeceward/Desktop/another/myenv/key.json'
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'/Users/me/Desktop/another/myenv/key.json'
     client = vision_v1.ImageAnnotatorClient()
 
     # Open the image using Pillow and convert to a Google Cloud Vision-compatible format
